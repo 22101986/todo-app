@@ -9,3 +9,31 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+.fc-event {
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.fc-event:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.fc-daygrid-event-dot {
+    display: none;
+}
+
+.fc-toolbar-title {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.fc-button {
+    background-color: #4f46e5 !important;
+    border: none !important;
+    padding: 0.4em 1em !important;
+}
+
+.fc-button:hover {
+    background-color: #4338ca !important;
+}
