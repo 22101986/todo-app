@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
+
 @section('content')
+<li class="nav-item">
+    <a class="nav-link btn btn-dark" href="{{ route('tasks.index') }}">To do list</a>
+</li>
 <div class="container">
     <div id='calendar'></div>
 </div>
