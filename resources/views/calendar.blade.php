@@ -8,6 +8,7 @@
 
 @push('scripts')
 <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const calendarEl = document.getElementById('calendar');
@@ -27,11 +28,21 @@
                 if (title) {
                     axios.post('{{ route("calendar.store") }}', {
                         title: title,
-                        start: arg.start,
-                        end: arg.end,
+                        start: arg.startStr,
+                        end: arg.endStr,
                         all_day: arg.allDay
-                    }).then(response => {
+                    })
+                    .then(response => {
                         calendar.refetchEvents();
+                        alert('Événement créé avec succès !');
+                    })
+                    .catch(error => {
+                        let msg = "Erreur lors de la création de l'événement.";
+                        if (error.response && error.response.data && error.response.data.message) {
+                            msg += "\n" + error.response.data.message;
+                        }
+                        alert(msg);
+                        console.error(error);
                     });
                 }
                 calendar.unselect();
@@ -41,20 +52,53 @@
                     axios.delete(`/calendar/${arg.event.id}`)
                         .then(() => {
                             arg.event.remove();
+                            alert('Événement supprimé !');
+                        })
+                        .catch(error => {
+                            let msg = "Erreur lors de la suppression de l'événement.";
+                            if (error.response && error.response.data && error.response.data.message) {
+                                msg += "\n" + error.response.data.message;
+                            }
+                            alert(msg);
+                            console.error(error);
                         });
                 }
             },
             eventDrop: function(arg) {
                 axios.put(`/calendar/${arg.event.id}`, {
-                    start: arg.event.start,
-                    end: arg.event.end,
+                    start: arg.event.startStr,
+                    end: arg.event.endStr,
                     all_day: arg.event.allDay
+                })
+                .then(() => {
+                    alert('Événement déplacé !');
+                })
+                .catch(error => {
+                    let msg = "Erreur lors du déplacement de l'événement.";
+                    if (error.response && error.response.data && error.response.data.message) {
+                        msg += "\n" + error.response.data.message;
+                    }
+                    alert(msg);
+                    arg.revert();
+                    console.error(error);
                 });
             },
             eventResize: function(arg) {
                 axios.put(`/calendar/${arg.event.id}`, {
-                    start: arg.event.start,
-                    end: arg.event.end
+                    start: arg.event.startStr,
+                    end: arg.event.endStr
+                })
+                .then(() => {
+                    alert('Événement redimensionné !');
+                })
+                .catch(error => {
+                    let msg = "Erreur lors du redimensionnement de l'événement.";
+                    if (error.response && error.response.data && error.response.data.message) {
+                        msg += "\n" + error.response.data.message;
+                    }
+                    alert(msg);
+                    arg.revert();
+                    console.error(error);
                 });
             }
         });
