@@ -8,9 +8,9 @@
 </head>
 <body class="bg-gray-100">
     <nav>
-        <li class="nav-item">
             <a class="nav-link" href="{{ route('calendar.index') }}">Calendrier</a>
-        </li>
+            <br>
+            <a class="nav-link" href="{{ route('articles.index') }}">Articles</a>
     </nav>
     <div class="container mx-auto px-4 py-8">
         <h1 class="text-3xl font-bold mb-8 text-center">Ma Liste de Tâches</h1>

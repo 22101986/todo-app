@@ -2,9 +2,10 @@
 
 
 @section('content')
-<li class="nav-item">
-    <a class="nav-link btn btn-dark" href="{{ route('tasks.index') }}">To do list</a>
-</li>
+<a class="nav-link btn btn-dark" href="{{ route('tasks.index') }}">To do list</a>
+<br>
+<a class="nav-link btn btn-dark" href="{{ route('articles.index') }}">Articles</a>
+
 <div class="container">
     <div id='calendar'></div>
 </div>
