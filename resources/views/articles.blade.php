@@ -1,9 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<a class="nav-link btn btn-dark" href="{{ route('tasks.index') }}">To do list</a>
 <br>
-<a class="nav-link btn btn-dark" href="{{ route('calendar.index') }}">Calendrier</a>
+
+<a class="ml-2 rtl:ml-0 focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900" href="{{ route('tasks.index') }}">To do list</a>
+<br>
+<br>
+<a class="ml-2 rtl:ml-0 focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900" href="{{ route('calendar.index') }}">Calendrier</a>
 <div class="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8">
     <div class="flex justify-between items-center mb-8">
         <h1 class="text-3xl font-bold">Liste des articles</h1>

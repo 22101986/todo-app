@@ -2,9 +2,11 @@
 
 
 @section('content')
-<a class="nav-link btn btn-dark" href="{{ route('tasks.index') }}">To do list</a>
 <br>
-<a class="nav-link btn btn-dark" href="{{ route('articles.index') }}">Articles</a>
+<a class="ml-2 rtl:ml-0 focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900" href="{{ route('tasks.index') }}">To do list</a>
+<br>
+<br>
+<a class="ml-2 rtl:ml-0 focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900" href="{{ route('articles.index') }}">Articles</a>
 
 <div class="container">
     <div id='calendar'></div>

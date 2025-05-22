@@ -7,10 +7,12 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100">
+    <br>
     <nav>
-            <a class="nav-link" href="{{ route('calendar.index') }}">Calendrier</a>
-            <br>
-            <a class="nav-link" href="{{ route('articles.index') }}">Articles</a>
+        <a class="ml-2 rtl:ml-0 focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900" href="{{ route('calendar.index') }}">Calendrier</a>
+        <br>
+        <br>
+        <a class="ml-2 rtl:ml-0 focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900" href="{{ route('articles.index') }}">Articles</a>
     </nav>
     <div class="container mx-auto px-4 py-8">
         <h1 class="text-3xl font-bold mb-8 text-center">Ma Liste de Tâches</h1>
