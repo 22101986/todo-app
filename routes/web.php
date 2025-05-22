@@ -23,3 +23,6 @@ Route::get('/calendar/events', [CalendarController::class, 'getEvents'])->name('
 Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
 Route::get('/articles/create', [ArticleController::class, 'create'])->name('articles.create');
 Route::post('/articles', [ArticleController::class,'store'])->name('articles.store');
+Route::get('/artcles/{article}', [ArticleController::class, 'edit'])->name('articles.edit');
+Route::put('/artcles/{article}', [ArticleController::class, 'update'])->name('articles.update');
+Route::delete('/artcles/{article}', [ArticleController::class, 'destroy'])->name('articles.destroy');
